@@ -9,6 +9,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean addCustomer(Customer customer) {
+        System.out.println(customer);
         return false;
     }
 

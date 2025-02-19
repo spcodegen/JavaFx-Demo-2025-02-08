@@ -7,9 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import service.ServiceFactory;
-import service.SuperService;
 import service.custom.CustomerService;
-import service.custom.impl.CustomerServiceImpl;
 import util.ServiceType;
 
 public class CustomerFormController {
@@ -51,6 +49,7 @@ public class CustomerFormController {
         double salary = Double.parseDouble(txtSalary.getText());
         Customer customer = new Customer(id, name, address, salary);
 
+        service.addCustomer(customer);
 
     }
 
