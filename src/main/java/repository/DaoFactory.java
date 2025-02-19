@@ -3,7 +3,7 @@ package repository;
 import repository.custom.impl.CustomerDaoImpl;
 import repository.custom.impl.ItemDaoImpl;
 import repository.custom.impl.OrderDaoImpl;
-import util.RepositoryType;
+import util.DaoType;
 
 public class DaoFactory {
     private static DaoFactory instance;
@@ -15,7 +15,7 @@ public class DaoFactory {
         return instance == null ? instance = new DaoFactory() : instance;
     }
 
-    public <T extends SuperDao> T getRepositoryType(RepositoryType type) {
+    public <T extends SuperDao> T getDaoType(DaoType type) {
         switch (type) {
             case CUSTOMER:
                 return (T) new CustomerDaoImpl();

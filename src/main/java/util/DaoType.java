@@ -1,5 +1,5 @@
 package util;
 
-public enum RepositoryType {
+public enum DaoType {
     CUSTOMER,ITEM,ORDER
 }
