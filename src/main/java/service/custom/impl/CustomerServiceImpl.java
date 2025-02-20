@@ -4,10 +4,8 @@ import com.google.inject.Inject;
 import dto.Customer;
 import entity.CustomerEntity;
 import org.modelmapper.ModelMapper;
-import repository.DaoFactory;
 import repository.custom.CustomerDao;
 import service.custom.CustomerService;
-import util.DaoType;
 
 import java.util.List;
 
