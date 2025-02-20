@@ -30,6 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerEntity map = new ModelMapper().map(customer, CustomerEntity.class);
 
         dao.save(map);
+
         return false;
     }
 

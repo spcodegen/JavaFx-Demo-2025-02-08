@@ -1,7 +1,9 @@
 package repository.custom.impl;
 
+import config.HibernateConfig;
 import dto.Customer;
 import entity.CustomerEntity;
+import org.hibernate.Session;
 import repository.custom.CustomerDao;
 
 import java.util.List;
@@ -11,6 +13,13 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public boolean save(CustomerEntity entity) {
         System.out.println("Repository : "+entity);
+
+        Session session = HibernateConfig.getSession();
+        session.beginTransaction();
+        session.persist(entity);
+        session.getTransaction().commit();
+        session.close();
+
         return false;
     }
 
