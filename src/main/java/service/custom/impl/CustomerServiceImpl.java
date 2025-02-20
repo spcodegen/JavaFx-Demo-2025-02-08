@@ -1,5 +1,6 @@
 package service.custom.impl;
 
+import com.google.inject.Inject;
 import dto.Customer;
 import entity.CustomerEntity;
 import org.modelmapper.ModelMapper;
@@ -12,7 +13,8 @@ import java.util.List;
 
 public class CustomerServiceImpl implements CustomerService {
 
-    CustomerDao dao = DaoFactory.getInstance().getDaoType(DaoType.CUSTOMER);
+    @Inject
+    CustomerDao dao;
 
     @Override
     public boolean addCustomer(Customer customer) {
